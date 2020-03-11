@@ -1,0 +1,67 @@
+{
+    "name": "parsify-plugin-hello-world",
+    "version": "0.0.1",
+    "description": "Parsify plugin for showing some text",
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/**/*"
+    ],
+    "author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
+    "bugs": {
+        "url": "https://github.com/parsify/plugin-boilerplate-typescript/issues"
+    },
+    "scripts": {
+        "prebuild": "del-cli dist",
+        "esm": "tsc --module esnext && cpy dist/index.js dist --rename index.esm.js",
+        "cjs": "tsc --module commonjs",
+        "build": "npm run esm && npm run cjs",
+        "test": "xo && nyc ava",
+        "prepublishOnly": "npm run build"
+    },
+    "engines": {
+        "node": ">=10"
+    },
+    "license": "MIT",
+    "repository": "parsify/plugin-boilerplate-typescript",
+    "homepage": "https://github.com/parsify/plugin-boilerplate-typescript",
+    "keywords": [
+        "parsify",
+        "parsify-plugin",
+        "plugin",
+        "expression-parser",
+        "parser",
+        "expression"
+    ],
+    "devDependencies": {
+        "@akepinski/tsconfig": "0.0.2",
+        "@typescript-eslint/eslint-plugin": "^2.23.0",
+        "@typescript-eslint/parser": "^2.23.0",
+        "ava": "^3.5.0",
+        "coveralls": "^3.0.9",
+        "cpy-cli": "^3.1.0",
+        "del-cli": "^3.0.0",
+        "eslint-config-xo-typescript": "^0.26.0",
+        "nyc": "^15.0.0",
+        "ts-node": "^8.6.2",
+        "typescript": "^3.8.3",
+        "xo": "^0.28.0"
+    },
+    "sideEffects": false,
+    "ava": {
+        "extensions": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register"
+        ]
+    },
+    "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+            "ts"
+        ]
+    },
+    "dependencies": {}
+}
