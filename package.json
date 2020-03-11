@@ -10,7 +10,7 @@
     ],
     "author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
     "bugs": {
-        "url": "https://github.com/parsify/plugin-boilerplate-typescript/issues"
+        "url": "https://github.com/parsify-dev/plugin-boilerplate-typescript/issues"
     },
     "scripts": {
         "prebuild": "del-cli dist",
@@ -24,8 +24,8 @@
         "node": ">=10"
     },
     "license": "MIT",
-    "repository": "parsify/plugin-boilerplate-typescript",
-    "homepage": "https://github.com/parsify/plugin-boilerplate-typescript",
+    "repository": "parsify-dev/plugin-boilerplate-typescript",
+    "homepage": "https://github.com/parsify-dev/plugin-boilerplate-typescript",
     "keywords": [
         "parsify",
         "parsify-plugin",
