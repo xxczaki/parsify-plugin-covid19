@@ -1,22 +1,19 @@
-interface Options {
-	upperCase?: boolean;
-}
+import {Parser} from '@parsify/math';
+import pMemoize from 'p-memoize';
 
-/*
-	This is the main function you want to export.
-	You can add options for customization (in this case `upperCase`).
-	It receives the expression, which you need to validate and either do something with it or return the original expression.
-*/
-export default ({upperCase = false}: Options = {}) => async (expression: string): Promise<string> => {
-	// Validate the expression to see if it should be processed by your plugin
-	if (expression === 'hello') {
-		if (upperCase) {
-			return 'HELLO WORLD!';
-		}
+import {fetcher} from './utils/fetcher';
 
-		return 'hello world!';
-	}
+const memFetcher = pMemoize(fetcher);
 
-	// If the expression validation fails, just return the expression
+export default (parser: Parser) => async (expression: string): Promise<string> => {
+	const data = await memFetcher();
+
+	parser.set('confirmed', () => {
+		return data.latest.confirmed;
+	});
+	parser.set('deaths', () => {
+		return data.latest.deaths;
+	});
+
 	return expression;
 };

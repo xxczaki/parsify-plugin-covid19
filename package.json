@@ -1,7 +1,7 @@
 {
-    "name": "parsify-plugin-hello-world",
-    "version": "0.0.1",
-    "description": "Parsify plugin for showing some text",
+    "name": "parsify-plugin-covid19",
+    "version": "0.0.2",
+    "description": "Parsify plugin, that adds COVID 19-related functions",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
     "types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
     ],
     "author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
     "bugs": {
-        "url": "https://github.com/parsify-dev/plugin-boilerplate-typescript/issues"
+        "url": "https://github.com/xxczaki/parsify-plugin-covid19/issues"
     },
     "scripts": {
         "prebuild": "del-cli dist",
@@ -24,29 +24,37 @@
         "node": ">=10"
     },
     "license": "MIT",
-    "repository": "parsify-dev/plugin-boilerplate-typescript",
-    "homepage": "https://github.com/parsify-dev/plugin-boilerplate-typescript",
+    "repository": "xxczaki/parsify-plugin-covid19",
+    "homepage": "https://github.com/xxczaki/parsify-plugin-covid19",
     "keywords": [
         "parsify",
         "parsify-plugin",
         "plugin",
         "expression-parser",
         "parser",
-        "expression"
+        "expression",
+        "covid19",
+        "covid",
+        "coronavirus",
+        "data",
+        "math",
+        "functions"
     ],
     "devDependencies": {
         "@akepinski/tsconfig": "0.0.2",
-        "@typescript-eslint/eslint-plugin": "^2.23.0",
-        "@typescript-eslint/parser": "^2.23.0",
-        "ava": "^3.5.0",
-        "coveralls": "^3.0.9",
+        "@parsify/core": "^0.1.0",
+        "@parsify/math": "^0.2.4",
+        "@typescript-eslint/eslint-plugin": "^2.30.0",
+        "@typescript-eslint/parser": "^2.30.0",
+        "ava": "^3.8.1",
+        "coveralls": "^3.1.0",
         "cpy-cli": "^3.1.0",
         "del-cli": "^3.0.0",
-        "eslint-config-xo-typescript": "^0.26.0",
-        "nyc": "^15.0.0",
-        "ts-node": "^8.6.2",
+        "eslint-config-xo-typescript": "^0.28.0",
+        "nyc": "^15.0.1",
+        "ts-node": "^8.9.1",
         "typescript": "^3.8.3",
-        "xo": "^0.28.0"
+        "xo": "^0.30.0"
     },
     "sideEffects": false,
     "ava": {
@@ -61,7 +69,13 @@
         "extends": "xo-typescript",
         "extensions": [
             "ts"
-        ]
+        ],
+        "rules": {
+            "@typescript-eslint/prefer-readonly-parameter-types": "off"
+        }
     },
-    "dependencies": {}
+    "dependencies": {
+        "isomorphic-unfetch": "^3.0.0",
+        "p-memoize": "^4.0.0"
+    }
 }

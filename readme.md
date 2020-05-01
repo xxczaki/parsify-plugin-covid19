@@ -1,46 +1,43 @@
-# Parsify Plugin Hello World
+# Parsify Plugin COVID 19
 
-[![Build Status](https://travis-ci.com/parsify-dev/plugin-boilerplate-typescript.svg?branch=master)](https://travis-ci.com/parsify-dev/plugin-boilerplate-typescript) 
-[![Coverage Status](https://coveralls.io/repos/github/parsify-dev/plugin-boilerplate-typescript/badge.svg?branch=master)](https://coveralls.io/github/parsify-dev/plugin-boilerplate-typescript?branch=master)
+[![Build Status](https://travis-ci.com/xxczaki/parsify-plugin-covid19.svg?branch=master)](https://travis-ci.com/xxczaki/parsify-plugin-covid19) 
+[![Coverage Status](https://coveralls.io/repos/github/xxczaki/parsify-plugin-covid19/badge.svg?branch=master)](https://coveralls.io/github/xxczaki/parsify-plugin-covid19?branch=master)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 
 ## About
 
-This plugin displays the `hello world!` message, when the user enters `hello` expression.
+This plugin adds COVID 19-related functions to Parsify.
 
 ## Install
 
 ```
-$ npm install @parsify/core parsify-plugin-hello-world
+$ npm install @parsify/core @parsify/math parsify-plugin-covid19
 ```
 
 ## Usage
 
 ```js
 import Parsify from '@parsify/core';
-import parsifyPluginHelloWorld from 'parsify-plugin-hellow-world';
+import parsifyMathPlugin, {mathParser} from '@parsify/math';
+import parsifyCovid19Plugin from 'parsify-plugin-covid19';
 
 const parsify = new Parsify([
-    parsifyPluginHelloWorld();
+    parsifyCovid19Plugin(mathParser),
+    parsifyMathPlugin()
 ]);
 ```
 
+**Note: the plugin order is important!**
+
 ## API
 
-#### parsifyPluginHelloWorld(options?)
+#### parsifyCovid19Plugin(parser)
 
-##### options
+###### parser
 
-Type: `object`
+Type: `Parser`
 
-Any of the options below
-
-###### upperCase
-
-Type: `boolean`\
-Default: `false`
-
-Whether the output should be upper case or not.
+`@parsify/math` exported parser.
 
 ## License
 
