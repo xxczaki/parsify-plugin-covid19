@@ -10,6 +10,6 @@ test('general', async t => {
 		parsifyMathPlugin()
 	]);
 
-	t.not(await parsify.parse('confirmed()'), 'confirmed()');
-	t.not(await parsify.parse('deaths()'), 'deaths()');
+	t.not(await parsify.parse('confirmed'), 'confirmed');
+	t.not(await parsify.parse('deaths'), 'deaths');
 });

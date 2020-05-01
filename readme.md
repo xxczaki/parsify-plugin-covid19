@@ -6,11 +6,11 @@
 
 ## About
 
-This plugin adds COVID 19-related functions to Parsify:
+This plugin adds COVID 19-related variables to Parsify:
 
 ```
-confirmed()  //=> returns number of confirmed cases (global)
-deaths()     //=> returns number of deaths (global)
+confirmed  //=> returns number of confirmed cases (global)
+deaths     //=> returns number of deaths (global)
 ```
 
 ## Install
