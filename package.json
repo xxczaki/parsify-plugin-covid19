@@ -1,7 +1,7 @@
 {
     "name": "parsify-plugin-covid19",
-    "version": "0.0.2",
-    "description": "Parsify plugin, that adds COVID 19-related functions",
+    "version": "0.0.3",
+    "description": "Parsify plugin, that adds COVID 19-related variables",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
     "types": "dist/index.d.ts",
